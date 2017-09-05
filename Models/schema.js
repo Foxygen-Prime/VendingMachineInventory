@@ -7,13 +7,18 @@ const vendingMachineSchema = new mongoose.Schema({
     unique: true
   },
   quantity: {
-    inStock: Number,
+    type: Number,
+
+  },
+  price: {
+    type: Number,
     required: true,
   },
-  type: [String],
-  Available: Boolean,
-  Price: Number
-})
+  url: {
+    type: String,
+    unique: true
+  }
+});
 
 const vendingMachineInventory = mongoose.model('vendingMachineInventory', vendingMachineSchema);
-    module.exports = vendingMachineInventory;
+module.exports = vendingMachineInventory;
